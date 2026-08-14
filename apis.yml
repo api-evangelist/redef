@@ -29,7 +29,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-21'
+modified: '2026-08-13'
 tags:
 - Company
 - Media
@@ -57,8 +57,33 @@ common:
   url: https://redef.com/info/terms
 - type: SignUp
   url: https://redef.com/signup/join
+- type: GitHubOrganization
+  url: https://github.com/REDEF
+- type: LLMsTxt
+  url: llms/redef-llms.txt
 x-enrichment:
-  date: '2026-07-21'
+  date: '2026-08-13'
   status: minimal
-  artifacts_added: 1
+  artifacts_added: 3
   pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    REDEF is a hand-curated consumer media site and email newsletter with no developer
+    program at all — redef.com answers every probed API path (/openapi.json, /graphql,
+    /api, /docs, /llms.txt and all /.well-known/*) with the identical 504,882-byte HTML
+    catch-all page it serves for "/", api./developer./docs.redef.com are NXDOMAIN, and
+    the REDEF GitHub org holds one forked EJS build tool from 2015.
+  evidence:
+  - url: https://redef.com/openapi.json
+    status: 200
+  - url: https://redef.com/.well-known/agent-card.json
+    status: 200
+  - url: https://redef.com/api
+    status: 200
+  - url: https://redef.com/open_search.xml
+    status: 200
+  - url: https://api.github.com/orgs/REDEF/repos
+    status: 200
+  checked: '2026-08-13'
