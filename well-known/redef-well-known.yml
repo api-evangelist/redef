@@ -1,0 +1,67 @@
+generated: '2026-08-13'
+method: probed
+source: live HTTPS probes of https://redef.com/.well-known/*
+host: https://redef.com
+note: >-
+  Every /.well-known/ path on redef.com answers HTTP 200 with the SAME 504,882-byte
+  HTML document the site returns for "/" (the Rails/SPA catch-all). None of them is a
+  document — the status code is a soft-404. Recorded as absent, and NO WellKnown or
+  SecurityTxt pointer is emitted in apis.yml, because a 200 carrying an HTML shell is
+  not evidence that the provider serves that surface.
+documents:
+- path: /.well-known/security.txt
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/openid-configuration
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/api-catalog
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/ai-plugin.json
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/agent-card.json
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+- path: /.well-known/agent.json
+  status: 200
+  soft_404: true
+  content_type: text/html
+  bytes: 504882
+  file: null
+other_discovery_documents:
+- path: /open_search.xml
+  url: https://redef.com/open_search.xml
+  status: 200
+  content_type: application/xml
+  bytes: 712
+  spec: OpenSearch description 1.1
+  file: redef-open-search.xml
+  note: >-
+    The one genuinely machine-readable document REDEF publishes. It is an OpenSearch
+    description for the site's article search (template
+    https://redef.com/search/articles/{searchTerms}), served at /open_search.xml — NOT
+    under /.well-known/ — and it describes an HTML search surface, not an API. Saved
+    verbatim; no canonical scored pointer applies.

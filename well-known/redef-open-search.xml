@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+ <ShortName>REDEF.com</ShortName>
+ <Description>Items from REDEF.com</Description>
+ <Tags>redef</Tags>
+ <Contact>support@redefgroup.com</Contact>
+ <Url type="text/html" template="https://redef.com/search/articles/{searchTerms}" />
+ <Developer>REDEF</Developer>
+ <Query role="example" searchTerms="cat" />
+ <SyndicationRight>open</SyndicationRight>
+ <AdultContent>false</AdultContent>
+ <Language>en-us</Language>
+ <OutputEncoding>UTF-8</OutputEncoding>
+ <InputEncoding>UTF-8</InputEncoding>
+ <Image height="16" width="16" type="image/x-icon">https://redef.com/favicon.ico</Image>
+</OpenSearchDescription>
